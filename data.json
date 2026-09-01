@@ -3,58 +3,88 @@
     "name": "Masjid Agung Raudhatul Dunya",
     "location": "Bogor, Jawa Barat",
     "fallbackLat": -6.5971,
-    "fallbackLng": 106.8060
+    "fallbackLng": 106.8060,
+    "donationUrl": "https://example.com/infaq-raudhatul-dunya",
+    "donationText": "Infaq & Sedekah untuk Kemakmuran Masjid"
   },
   "runningTexts": [
     "Selamat datang di Masjid Agung Raudhatul Dunya • Mari jaga kebersihan dan kenyamanan masjid",
     "Matikan atau silent HP saat sholat berjamaah • Rapatkan dan luruskan shaf",
-    "Infaq dan sedekah Anda sangat berarti untuk kemakmuran masjid • Jazakumullahu khairan",
-    "Jadikan masjid sebagai pusat ibadah, ilmu, dan silaturahmi • Mari hidupkan sunnah Rasulullah ﷺ"
+    "Infaq dan sedekah Anda sangat berarti • Jazakumullahu khairan katsiran",
+    "Jadikan masjid sebagai pusat ibadah, ilmu, dan silaturahmi"
   ],
   "quotes": [
-    {
-      "text": "Sesungguhnya sholat itu mencegah dari (perbuatan) keji dan mungkar.",
-      "source": "QS. Al-Ankabut: 45"
-    },
-    {
-      "text": "Sebaik-baik tempat adalah masjid, dan seburuk-buruk tempat adalah pasar.",
-      "source": "HR. Ahmad & Ath-Thabrani"
-    },
-    {
-      "text": "Barangsiapa yang membangun masjid karena Allah, maka Allah akan membangunkan baginya rumah di surga.",
-      "source": "HR. Bukhari & Muslim"
-    },
-    {
-      "text": "Sholat berjamaah lebih utama daripada sholat sendirian dengan dua puluh tujuh derajat.",
-      "source": "HR. Bukhari & Muslim"
-    },
-    {
-      "text": "Jagalah sholatmu, karena sholat adalah tiang agama.",
-      "source": "Hadits"
-    },
-    {
-      "text": "Dan dirikanlah sholat, tunaikanlah zakat, dan rukuklah bersama orang-orang yang rukuk.",
-      "source": "QS. Al-Baqarah: 43"
-    }
+    { "text": "Sesungguhnya sholat itu mencegah dari (perbuatan) keji dan mungkar.", "source": "QS. Al-Ankabut: 45" },
+    { "text": "Sebaik-baik tempat adalah masjid, dan seburuk-buruk tempat adalah pasar.", "source": "HR. Ahmad" },
+    { "text": "Barangsiapa yang membangun masjid karena Allah, maka Allah akan membangunkan baginya rumah di surga.", "source": "HR. Bukhari & Muslim" },
+    { "text": "Sholat berjamaah lebih utama daripada sholat sendirian dengan dua puluh tujuh derajat.", "source": "HR. Bukhari & Muslim" }
   ],
-  "slides": [
+  "kegiatanHarian": [
+    { "waktu": "Ba'da Subuh", "nama": "Kajian Tafsir Al-Qur'an", "pengisi": "Ustadz Ahmad Fauzi" },
+    { "waktu": "Ba'da Maghrib", "nama": "Kajian Hadits Arbain", "pengisi": "Ustadz Yusuf Rahman" },
+    { "waktu": "Ba'da Isya (Selasa)", "nama": "Kajian Fikih Kontemporer", "pengisi": "Ustadz Hendra" },
+    { "waktu": "Ahad Pagi", "nama": "Taman Pendidikan Al-Qur'an (TPA)", "pengisi": "Tim Pengajar TPA" }
+  ],
+  "jadwalImam": {
+    "Subuh": "Ustadz Ahmad Fauzi",
+    "Dzuhur": "Ustadz Yusuf Rahman",
+    "Ashar": "Ustadz Hendra",
+    "Maghrib": "Ustadz Ahmad Fauzi",
+    "Isya": "Ustadz Yusuf Rahman",
+    "Jumat": "Ustadz Dr. Muhammad Ridwan"
+  },
+  "jadwalKhotib": [
+    { "tanggal": "Jumat ini", "nama": "Ustadz Dr. Muhammad Ridwan", "tema": "Menjaga Keikhlasan dalam Ibadah" },
+    { "tanggal": "Jumat depan", "nama": "Ustadz Ahmad Fauzi", "tema": "Keutamaan Silaturahmi" }
+  ],
+  "hariBesar": [
+    { "nama": "Tahun Baru Islam 1448 H", "tanggal": "26 Juni 2026", "hijri": "1 Muharram 1448" },
+    { "nama": "Maulid Nabi Muhammad ﷺ", "tanggal": "4 September 2026", "hijri": "12 Rabiul Awal 1448" },
+    { "nama": "Isra Mi'raj", "tanggal": "15 Januari 2027", "hijri": "27 Rajab 1448" },
+    { "nama": "Nuzulul Qur'an", "tanggal": "5 Maret 2027", "hijri": "17 Ramadhan 1448" },
+    { "nama": "Idul Fitri 1448 H", "tanggal": "20 Maret 2027", "hijri": "1 Syawal 1448" },
+    { "nama": "Idul Adha 1448 H", "tanggal": "27 Mei 2027", "hijri": "10 Dzulhijjah 1448" }
+  ],
+  "dzikirPagi": [
+    "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَٰهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ",
+    "اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ",
+    "سُبْحَانَ اللهِ وَبِحَمْدِهِ (100x)",
+    "أَسْتَغْفِرُ اللهَ وَأَتُوبُ إِلَيْهِ (100x)"
+  ],
+  "dzikirPetang": [
+    "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَٰهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ",
+    "اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ الْمَصِيرُ",
+    "أَعُوذُ بِكَلِمَاتِ اللهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ (3x)",
+    "سُبْحَانَ اللهِ وَبِحَمْدِهِ (100x)"
+  ],
+  "adhanOptions": [
+    { "id": "makkah", "name": "Adzan Masjidil Haram", "url": "https://cdn.aladhan.com/audio/adhans/a1.mp3" },
+    { "id": "madinah", "name": "Adzan Madinah", "url": "https://cdn.aladhan.com/audio/adhans/a2.mp3" },
+    { "id": "egypt", "name": "Adzan Mesir", "url": "https://cdn.aladhan.com/audio/adhans/a3.mp3" },
+    { "id": "indonesia", "name": "Adzan Indonesia", "url": "https://cdn.aladhan.com/audio/adhans/a4.mp3" }
+  ],
+  "selectedAdhan": "makkah",
+  "pengumuman": [
     {
-      "image": "https://images.unsplash.com/photo-1564769625392-651b2c0e7f8b?w=1200&q=80",
-      "caption": "Masjid Agung Raudhatul Dunya"
+      "judul": "Kajian Rutin Ba'da Maghrib",
+      "deskripsi": "Setiap hari ba'da Maghrib diadakan kajian singkat 15-20 menit. Mari hadir untuk menambah ilmu.",
+      "ikon": "📖"
     },
     {
-      "image": "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=1200&q=80",
-      "caption": "Mari makmurkan masjid dengan sholat berjamaah"
+      "judul": "Pendaftaran TPA Dibuka",
+      "deskripsi": "Taman Pendidikan Al-Qur'an menerima santri baru. Daftar di sekretariat masjid.",
+      "ikon": "🧒"
     },
     {
-      "image": "https://images.unsplash.com/photo-1591604129939-f72eaa66dbb0?w=1200&q=80",
-      "caption": "Infaq & Sedekah untuk kemakmuran masjid"
+      "judul": "Gotong Royong Kebersihan",
+      "deskripsi": "Ahad pagi kerja bakti membersihkan lingkungan masjid. Mari berpartisipasi.",
+      "ikon": "🧹"
     }
   ],
   "settings": {
     "method": 20,
     "quoteIntervalSeconds": 40,
-    "slideIntervalSeconds": 12,
+    "sectionRotateSeconds": 15,
     "iqamahMinutes": {
       "Fajr": 15,
       "Dhuhr": 12,
@@ -62,8 +92,8 @@
       "Maghrib": 8,
       "Isha": 12
     },
-    "adhanAudio": "https://cdn.aladhan.com/audio/adhans/a1.mp3",
     "enableAdhanSound": true,
-    "enableIqamahMode": true
+    "enableIqamahMode": true,
+    "enableOfflineCache": true
   }
 }

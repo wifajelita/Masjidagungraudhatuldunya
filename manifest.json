@@ -1,0 +1,10 @@
+{
+  "name": "Display Masjid - Raudhatul Dunya",
+  "short_name": "Masjid Display",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FDF8F0",
+  "theme_color": "#C9A227",
+  "orientation": "any",
+  "icons": []
+}

@@ -1,70 +1,42 @@
-# Display Masjid v2 — Masjid Agung Raudhatul Dunya
+# Display Masjid v3 — Masjid Agung Raudhatul Dunya
 
-Aplikasi display masjid modern berbasis **HTML + CSS + JS + JSON**.  
-Siap di-deploy ke **GitHub Pages**.
+Aplikasi display masjid lengkap berbasis HTML/CSS/JS + JSON.  
+Siap GitHub Pages + **Offline Mode** (Service Worker).
 
 ## Fitur Lengkap
 
-| Fitur | Keterangan |
-|-------|----------|
-| Jam Digital | Real-time |
-| Jadwal Sholat | Akurat via Aladhan API (metode Kemenag) |
-| Geolocation | Deteksi lokasi otomatis + fallback Bogor |
-| Countdown | Menuju waktu sholat terdekat |
-| **Suara Adzan** | Otomatis play saat masuk waktu sholat |
-| **Mode Iqamah** | Countdown penuh layar setelah adzan |
-| **Slide Gambar** | Rotasi gambar + caption |
-| Tanggal Hijriah & Masehi | Otomatis |
-| Running Text | Pengumuman berjalan |
-| Quote / Ayat | Rotasi otomatis |
-| Desain | Modern minimalis (White · Gold · Cream) |
-| Responsive | HP, Tablet, TV, Kiosk |
+- Jam digital + Countdown sholat terdekat
+- Jadwal sholat akurat (Kemenag) + Geolocation
+- **Suara Adzan** (bisa pilih 4 jenis)
+- **Mode Iqamah** (countdown penuh layar)
+- **Slide vertikal** konten bergantian otomatis
+- Kegiatan & Kajian Harian
+- Jadwal Imam & Khotib Jumat
+- Notifikasi Hari Besar Islam (Idul Fitri, Adha, dll)
+- **Dzikir Pagi & Petang** (teks Arab)
+- **QR Code Infaq/Donasi**
+- Pengumuman masjid
+- **Offline Mode** (tetap jalan meski internet putus)
+- Desain modern White · Gold · Cream
 
-## Cara Deploy ke GitHub Pages
+## Cara Pakai
 
-1. Buat repository baru
-2. Upload semua file
-3. Settings → Pages → Source: `main` / root
-4. Buka URL GitHub Pages
+1. Upload semua file ke GitHub repo
+2. Aktifkan GitHub Pages
+3. Buka di browser / Android TV Box / Smart TV
 
-## Kustomisasi (`data.json`)
+## Kustomisasi
 
-### Suara Adzan
-```json
-"adhanAudio": "https://cdn.aladhan.com/audio/adhans/a1.mp3",
-"enableAdhanSound": true
-```
+Edit **data.json** untuk:
+- Nama masjid, kegiatan, imam, khotib
+- Hari besar, dzikir, pengumuman
+- Pilihan adzan, durasi iqamah
+- URL donasi
 
-### Durasi Iqamah (menit)
-```json
-"iqamahMinutes": {
-  "Fajr": 15,
-  "Dhuhr": 12,
-  "Asr": 12,
-  "Maghrib": 8,
-  "Isha": 12
-}
-```
+## Offline
 
-### Slide Gambar
-```json
-"slides": [
-  {
-    "image": "images/foto1.jpg",
-    "caption": "Kegiatan kajian rutin"
-  }
-]
-```
-Ganti URL Unsplash dengan file lokal (buat folder `images/`).
-
-## Catatan Penting
-
-- Browser modern sering memblokir autoplay audio sampai ada interaksi user.  
-  Solusi: klik sekali di layar saat pertama kali dibuka.
-- Untuk produksi, download file adzan MP3 dan taruh lokal.
-- Metode perhitungan: **Kemenag (method 20)**.
+Aplikasi memakai Service Worker.  
+Setelah dibuka sekali online, berikutnya bisa offline (jadwal sholat terakhir tersimpan di localStorage).
 
 ---
-
-Dibuat untuk **Masjid Agung Raudhatul Dunya** – Bogor  
 Semoga menjadi amal jariyah. 🤲

@@ -4,11 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="theme-color" content="#FDF8F0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>Masjid Agung Raudhatul Dunya - Display Masjid</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
 </head>
 <body>
   <div class="app" id="app">
@@ -26,18 +28,18 @@
           <div class="gregorian" id="gregorian-date">—</div>
           <div class="hijri" id="hijri-date">—</div>
         </div>
+        <div class="offline-badge" id="offline-badge" title="Mode Offline">Offline</div>
       </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="main" id="main-content">
-      <!-- Clock + Countdown -->
-      <section class="hero">
+    <!-- Scrollable Main -->
+    <main class="main" id="main-scroll">
+      <!-- Hero: Clock + Countdown -->
+      <section class="hero section">
         <div class="clock-wrap">
           <div class="clock" id="clock">00:00:00</div>
           <div class="clock-label">Waktu Sekarang</div>
         </div>
-
         <div class="countdown-card" id="countdown-card">
           <div class="countdown-label">Menuju <span id="next-prayer-name">—</span></div>
           <div class="countdown" id="countdown">00:00:00</div>
@@ -45,63 +47,100 @@
         </div>
       </section>
 
-      <!-- Prayer Times Grid -->
-      <section class="prayers">
-        <div class="prayer-card" data-prayer="Fajr">
-          <div class="prayer-name">Subuh</div>
-          <div class="prayer-time" id="time-Fajr">--:--</div>
+      <!-- Prayer Times -->
+      <section class="prayers section">
+        <div class="prayer-card" data-prayer="Fajr"><div class="prayer-name">Subuh</div><div class="prayer-time" id="time-Fajr">--:--</div></div>
+        <div class="prayer-card" data-prayer="Sunrise"><div class="prayer-name">Syuruq</div><div class="prayer-time" id="time-Sunrise">--:--</div></div>
+        <div class="prayer-card" data-prayer="Dhuhr"><div class="prayer-name">Dzuhur</div><div class="prayer-time" id="time-Dhuhr">--:--</div></div>
+        <div class="prayer-card" data-prayer="Asr"><div class="prayer-name">Ashar</div><div class="prayer-time" id="time-Asr">--:--</div></div>
+        <div class="prayer-card" data-prayer="Maghrib"><div class="prayer-name">Maghrib</div><div class="prayer-time" id="time-Maghrib">--:--</div></div>
+        <div class="prayer-card" data-prayer="Isha"><div class="prayer-name">Isya</div><div class="prayer-time" id="time-Isha">--:--</div></div>
+      </section>
+
+      <!-- Rotating Content Sections -->
+      <section class="content-rotator section" id="content-rotator">
+        <!-- Section 1: Kegiatan + Imam -->
+        <div class="rotator-panel active" data-panel="0">
+          <div class="panel-grid">
+            <div class="info-card">
+              <div class="card-header"><span class="card-icon">📅</span> Kegiatan & Kajian Harian</div>
+              <div class="kegiatan-list" id="kegiatan-list"></div>
+            </div>
+            <div class="info-card">
+              <div class="card-header"><span class="card-icon">🕌</span> Jadwal Imam & Khotib</div>
+              <div class="imam-list" id="imam-list"></div>
+              <div class="khotib-box" id="khotib-box"></div>
+            </div>
+          </div>
         </div>
-        <div class="prayer-card" data-prayer="Sunrise">
-          <div class="prayer-name">Syuruq</div>
-          <div class="prayer-time" id="time-Sunrise">--:--</div>
+
+        <!-- Section 2: Pengumuman + QR Donasi -->
+        <div class="rotator-panel" data-panel="1">
+          <div class="panel-grid">
+            <div class="info-card">
+              <div class="card-header"><span class="card-icon">📢</span> Pengumuman Masjid</div>
+              <div class="pengumuman-list" id="pengumuman-list"></div>
+            </div>
+            <div class="info-card qr-card">
+              <div class="card-header"><span class="card-icon">💝</span> Infaq & Sedekah</div>
+              <div class="qr-wrap">
+                <div class="qr-placeholder" id="qr-code">
+                  <div class="qr-inner">QR</div>
+                </div>
+                <p class="qr-text" id="donation-text">Scan untuk Infaq</p>
+                <p class="qr-sub">Semoga menjadi amal jariyah</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="prayer-card" data-prayer="Dhuhr">
-          <div class="prayer-name">Dzuhur</div>
-          <div class="prayer-time" id="time-Dhuhr">--:--</div>
+
+        <!-- Section 3: Hari Besar + Quote -->
+        <div class="rotator-panel" data-panel="2">
+          <div class="panel-grid">
+            <div class="info-card">
+              <div class="card-header"><span class="card-icon">🌟</span> Hari Besar Islam</div>
+              <div class="haribesar-list" id="haribesar-list"></div>
+            </div>
+            <div class="info-card quote-card-inner">
+              <div class="card-header"><span class="card-icon">❝</span> Mutiara Hikmah</div>
+              <p class="quote-text" id="quote-text">Memuat...</p>
+              <p class="quote-source" id="quote-source"></p>
+            </div>
+          </div>
         </div>
-        <div class="prayer-card" data-prayer="Asr">
-          <div class="prayer-name">Ashar</div>
-          <div class="prayer-time" id="time-Asr">--:--</div>
-        </div>
-        <div class="prayer-card" data-prayer="Maghrib">
-          <div class="prayer-name">Maghrib</div>
-          <div class="prayer-time" id="time-Maghrib">--:--</div>
-        </div>
-        <div class="prayer-card" data-prayer="Isha">
-          <div class="prayer-name">Isya</div>
-          <div class="prayer-time" id="time-Isha">--:--</div>
+
+        <!-- Section 4: Dzikir -->
+        <div class="rotator-panel" data-panel="3">
+          <div class="panel-grid dzikir-grid">
+            <div class="info-card">
+              <div class="card-header"><span class="card-icon">🌅</span> Dzikir Pagi</div>
+              <div class="dzikir-list" id="dzikir-pagi"></div>
+            </div>
+            <div class="info-card">
+              <div class="card-header"><span class="card-icon">🌇</span> Dzikir Petang</div>
+              <div class="dzikir-list" id="dzikir-petang"></div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- Bottom area: Quote + Slider -->
-      <section class="bottom-area">
-        <div class="quote-card">
-          <div class="quote-icon">❝</div>
-          <p class="quote-text" id="quote-text">Memuat...</p>
-          <p class="quote-source" id="quote-source"></p>
-        </div>
-
-        <div class="slider-card">
-          <div class="slider-track" id="slider-track">
-            <!-- slides injected by JS -->
-          </div>
-          <div class="slider-dots" id="slider-dots"></div>
-        </div>
+      <!-- Adhan Selector (small) -->
+      <section class="adhan-selector section">
+        <label>Suara Adzan:</label>
+        <select id="adhan-select"></select>
       </section>
     </main>
 
-    <!-- Running Text -->
+    <!-- Footer Running Text -->
     <footer class="footer">
       <div class="running-text-wrap">
-        <div class="running-text" id="running-text">
-          Selamat datang di Masjid Agung Raudhatul Dunya
-        </div>
+        <div class="running-text" id="running-text">Selamat datang di Masjid Agung Raudhatul Dunya</div>
       </div>
     </footer>
 
-    <!-- ===== OVERLAY: ADHAN MODE ===== -->
+    <!-- OVERLAY ADHAN -->
     <div class="overlay" id="adhan-overlay">
-      <div class="overlay-content adhan-content">
+      <div class="overlay-content">
         <div class="overlay-icon">🕌</div>
         <h2 class="overlay-title">WAKTU ADZAN</h2>
         <div class="overlay-prayer" id="adhan-prayer-name">—</div>
@@ -110,9 +149,9 @@
       </div>
     </div>
 
-    <!-- ===== OVERLAY: IQAMAH MODE ===== -->
+    <!-- OVERLAY IQAMAH -->
     <div class="overlay" id="iqamah-overlay">
-      <div class="overlay-content iqamah-content">
+      <div class="overlay-content">
         <div class="overlay-icon">⏳</div>
         <h2 class="overlay-title">IQAMAH</h2>
         <div class="overlay-prayer" id="iqamah-prayer-name">—</div>
@@ -121,16 +160,14 @@
       </div>
     </div>
 
-    <!-- Loading Overlay -->
+    <!-- Loading -->
     <div class="loading" id="loading">
       <div class="spinner"></div>
-      <p>Memuat jadwal sholat...</p>
+      <p>Memuat Display Masjid...</p>
     </div>
 
-    <!-- Hidden Audio -->
     <audio id="adhan-audio" preload="auto"></audio>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
