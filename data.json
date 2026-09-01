@@ -1,0 +1,45 @@
+{
+  "mosque": {
+    "name": "Masjid Agung Raudhatul Dunya",
+    "location": "Bogor, Jawa Barat",
+    "fallbackLat": -6.5971,
+    "fallbackLng": 106.8060
+  },
+  "runningTexts": [
+    "Selamat datang di Masjid Agung Raudhatul Dunya • Mari jaga kebersihan dan kenyamanan masjid",
+    "Matikan atau silent HP saat sholat berjamaah • Rapatkan dan luruskan shaf",
+    "Infaq dan sedekah Anda sangat berarti untuk kemakmuran masjid • Jazakumullahu khairan",
+    "Jadikan masjid sebagai pusat ibadah, ilmu, dan silaturahmi • Mari hidupkan sunnah Rasulullah ﷺ"
+  ],
+  "quotes": [
+    {
+      "text": "Sesungguhnya sholat itu mencegah dari (perbuatan) keji dan mungkar.",
+      "source": "QS. Al-Ankabut: 45"
+    },
+    {
+      "text": "Sebaik-baik tempat adalah masjid, dan seburuk-buruk tempat adalah pasar.",
+      "source": "HR. Ahmad & Ath-Thabrani"
+    },
+    {
+      "text": "Barangsiapa yang membangun masjid karena Allah, maka Allah akan membangunkan baginya rumah di surga.",
+      "source": "HR. Bukhari & Muslim"
+    },
+    {
+      "text": "Sholat berjamaah lebih utama daripada sholat sendirian dengan dua puluh tujuh derajat.",
+      "source": "HR. Bukhari & Muslim"
+    },
+    {
+      "text": "Jagalah sholatmu, karena sholat adalah tiang agama.",
+      "source": "Hadits"
+    },
+    {
+      "text": "Dan dirikanlah sholat, tunaikanlah zakat, dan rukuklah bersama orang-orang yang rukuk.",
+      "source": "QS. Al-Baqarah: 43"
+    }
+  ],
+  "settings": {
+    "method": 20,
+    "quoteIntervalSeconds": 45,
+    "runningTextSpeed": 28
+  }
+}

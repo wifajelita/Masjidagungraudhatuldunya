@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#FDF8F0" />
+  <title>Masjid Agung Raudhatul Dunya - Display Masjid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app" id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="mosque-brand">
+        <div class="mosque-icon">☪</div>
+        <div class="mosque-info">
+          <h1 id="mosque-name">Masjid Agung Raudhatul Dunya</h1>
+          <p id="mosque-location">Bogor, Jawa Barat</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="date-block">
+          <div class="gregorian" id="gregorian-date">—</div>
+          <div class="hijri" id="hijri-date">—</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Clock + Countdown -->
+      <section class="hero">
+        <div class="clock-wrap">
+          <div class="clock" id="clock">00:00:00</div>
+          <div class="clock-label">Waktu Sekarang</div>
+        </div>
+
+        <div class="countdown-card">
+          <div class="countdown-label">Menuju <span id="next-prayer-name">—</span></div>
+          <div class="countdown" id="countdown">00:00:00</div>
+          <div class="next-prayer-time" id="next-prayer-time">—</div>
+        </div>
+      </section>
+
+      <!-- Prayer Times Grid -->
+      <section class="prayers">
+        <div class="prayer-card" data-prayer="Fajr">
+          <div class="prayer-name">Subuh</div>
+          <div class="prayer-time" id="time-Fajr">--:--</div>
+        </div>
+        <div class="prayer-card" data-prayer="Sunrise">
+          <div class="prayer-name">Syuruq</div>
+          <div class="prayer-time" id="time-Sunrise">--:--</div>
+        </div>
+        <div class="prayer-card" data-prayer="Dhuhr">
+          <div class="prayer-name">Dzuhur</div>
+          <div class="prayer-time" id="time-Dhuhr">--:--</div>
+        </div>
+        <div class="prayer-card" data-prayer="Asr">
+          <div class="prayer-name">Ashar</div>
+          <div class="prayer-time" id="time-Asr">--:--</div>
+        </div>
+        <div class="prayer-card" data-prayer="Maghrib">
+          <div class="prayer-name">Maghrib</div>
+          <div class="prayer-time" id="time-Maghrib">--:--</div>
+        </div>
+        <div class="prayer-card" data-prayer="Isha">
+          <div class="prayer-name">Isya</div>
+          <div class="prayer-time" id="time-Isha">--:--</div>
+        </div>
+      </section>
+
+      <!-- Quote / Announcement -->
+      <section class="quote-section">
+        <div class="quote-card">
+          <div class="quote-icon">❝</div>
+          <p class="quote-text" id="quote-text">Memuat...</p>
+          <p class="quote-source" id="quote-source"></p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Running Text -->
+    <footer class="footer">
+      <div class="running-text-wrap">
+        <div class="running-text" id="running-text">
+          Selamat datang di Masjid Agung Raudhatul Dunya • Mari jaga kebersihan masjid • Matikan HP saat sholat
+        </div>
+      </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Memuat jadwal sholat...</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
