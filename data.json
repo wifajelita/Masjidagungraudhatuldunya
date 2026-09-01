@@ -37,9 +37,33 @@
       "source": "QS. Al-Baqarah: 43"
     }
   ],
+  "slides": [
+    {
+      "image": "https://images.unsplash.com/photo-1564769625392-651b2c0e7f8b?w=1200&q=80",
+      "caption": "Masjid Agung Raudhatul Dunya"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=1200&q=80",
+      "caption": "Mari makmurkan masjid dengan sholat berjamaah"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1591604129939-f72eaa66dbb0?w=1200&q=80",
+      "caption": "Infaq & Sedekah untuk kemakmuran masjid"
+    }
+  ],
   "settings": {
     "method": 20,
-    "quoteIntervalSeconds": 45,
-    "runningTextSpeed": 28
+    "quoteIntervalSeconds": 40,
+    "slideIntervalSeconds": 12,
+    "iqamahMinutes": {
+      "Fajr": 15,
+      "Dhuhr": 12,
+      "Asr": 12,
+      "Maghrib": 8,
+      "Isha": 12
+    },
+    "adhanAudio": "https://cdn.aladhan.com/audio/adhans/a1.mp3",
+    "enableAdhanSound": true,
+    "enableIqamahMode": true
   }
 }

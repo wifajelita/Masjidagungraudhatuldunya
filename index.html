@@ -30,7 +30,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="main">
+    <main class="main" id="main-content">
       <!-- Clock + Countdown -->
       <section class="hero">
         <div class="clock-wrap">
@@ -38,7 +38,7 @@
           <div class="clock-label">Waktu Sekarang</div>
         </div>
 
-        <div class="countdown-card">
+        <div class="countdown-card" id="countdown-card">
           <div class="countdown-label">Menuju <span id="next-prayer-name">—</span></div>
           <div class="countdown" id="countdown">00:00:00</div>
           <div class="next-prayer-time" id="next-prayer-time">—</div>
@@ -73,12 +73,19 @@
         </div>
       </section>
 
-      <!-- Quote / Announcement -->
-      <section class="quote-section">
+      <!-- Bottom area: Quote + Slider -->
+      <section class="bottom-area">
         <div class="quote-card">
           <div class="quote-icon">❝</div>
           <p class="quote-text" id="quote-text">Memuat...</p>
           <p class="quote-source" id="quote-source"></p>
+        </div>
+
+        <div class="slider-card">
+          <div class="slider-track" id="slider-track">
+            <!-- slides injected by JS -->
+          </div>
+          <div class="slider-dots" id="slider-dots"></div>
         </div>
       </section>
     </main>
@@ -87,16 +94,41 @@
     <footer class="footer">
       <div class="running-text-wrap">
         <div class="running-text" id="running-text">
-          Selamat datang di Masjid Agung Raudhatul Dunya • Mari jaga kebersihan masjid • Matikan HP saat sholat
+          Selamat datang di Masjid Agung Raudhatul Dunya
         </div>
       </div>
     </footer>
+
+    <!-- ===== OVERLAY: ADHAN MODE ===== -->
+    <div class="overlay" id="adhan-overlay">
+      <div class="overlay-content adhan-content">
+        <div class="overlay-icon">🕌</div>
+        <h2 class="overlay-title">WAKTU ADZAN</h2>
+        <div class="overlay-prayer" id="adhan-prayer-name">—</div>
+        <div class="overlay-time" id="adhan-time">--:--</div>
+        <p class="overlay-message">Mari bersegera menuju masjid</p>
+      </div>
+    </div>
+
+    <!-- ===== OVERLAY: IQAMAH MODE ===== -->
+    <div class="overlay" id="iqamah-overlay">
+      <div class="overlay-content iqamah-content">
+        <div class="overlay-icon">⏳</div>
+        <h2 class="overlay-title">IQAMAH</h2>
+        <div class="overlay-prayer" id="iqamah-prayer-name">—</div>
+        <div class="iqamah-countdown" id="iqamah-countdown">00:00</div>
+        <p class="overlay-message">Rapatkan & luruskan shaf • Matikan HP</p>
+      </div>
+    </div>
 
     <!-- Loading Overlay -->
     <div class="loading" id="loading">
       <div class="spinner"></div>
       <p>Memuat jadwal sholat...</p>
     </div>
+
+    <!-- Hidden Audio -->
+    <audio id="adhan-audio" preload="auto"></audio>
   </div>
 
   <script src="script.js"></script>

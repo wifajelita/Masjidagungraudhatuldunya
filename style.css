@@ -1,4 +1,4 @@
-/* ===== Masjid Agung Raudhatul Dunya - Display Masjid ===== */
+/* ===== Masjid Agung Raudhatul Dunya - Display Masjid v2 ===== */
 /* Theme: White · Gold · Cream · Modern Minimalist */
 
 :root {
@@ -11,7 +11,7 @@
   --text: #2C2416;
   --text-soft: #5C4F3A;
   --text-muted: #8A7B66;
-  --card-bg: rgba(255, 255, 255, 0.72);
+  --card-bg: rgba(255, 255, 255, 0.75);
   --card-border: rgba(201, 162, 39, 0.18);
   --shadow: 0 8px 32px rgba(44, 36, 22, 0.06);
   --radius: 20px;
@@ -45,8 +45,8 @@ body {
   height: 100dvh;
   display: flex;
   flex-direction: column;
-  padding: clamp(12px, 2vw, 28px);
-  gap: clamp(10px, 1.5vw, 20px);
+  padding: clamp(10px, 1.8vw, 24px);
+  gap: clamp(8px, 1.2vw, 16px);
   position: relative;
 }
 
@@ -62,24 +62,24 @@ body {
 .mosque-brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .mosque-icon {
-  width: clamp(42px, 5vw, 56px);
-  height: clamp(42px, 5vw, 56px);
+  width: clamp(40px, 4.5vw, 52px);
+  height: clamp(40px, 4.5vw, 52px);
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
   color: white;
-  border-radius: 16px;
+  border-radius: 14px;
   display: grid;
   place-items: center;
-  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
   box-shadow: 0 4px 16px rgba(201, 162, 39, 0.3);
 }
 
 .mosque-info h1 {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(1.05rem, 2.4vw, 1.55rem);
+  font-size: clamp(1rem, 2.2vw, 1.45rem);
   font-weight: 600;
   color: var(--text);
   letter-spacing: -0.02em;
@@ -87,23 +87,21 @@ body {
 }
 
 .mosque-info p {
-  font-size: clamp(0.75rem, 1.4vw, 0.9rem);
+  font-size: clamp(0.72rem, 1.3vw, 0.88rem);
   color: var(--text-muted);
   margin-top: 2px;
 }
 
-.date-block {
-  text-align: right;
-}
+.date-block { text-align: right; }
 
 .gregorian {
-  font-size: clamp(0.85rem, 1.6vw, 1.05rem);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
   font-weight: 500;
   color: var(--text);
 }
 
 .hijri {
-  font-size: clamp(0.75rem, 1.3vw, 0.9rem);
+  font-size: clamp(0.72rem, 1.2vw, 0.88rem);
   color: var(--gold-dark);
   margin-top: 2px;
   font-weight: 500;
@@ -114,16 +112,16 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: clamp(12px, 1.8vw, 22px);
+  gap: clamp(10px, 1.4vw, 18px);
   min-height: 0;
   overflow: hidden;
 }
 
-/* Hero: Clock + Countdown */
+/* Hero */
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(12px, 2vw, 24px);
+  gap: clamp(10px, 1.6vw, 20px);
   flex-shrink: 0;
 }
 
@@ -132,7 +130,7 @@ body {
   backdrop-filter: blur(12px);
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  padding: clamp(16px, 2.5vw, 28px);
+  padding: clamp(14px, 2vw, 24px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -143,7 +141,7 @@ body {
 
 .clock {
   font-family: 'Inter', monospace;
-  font-size: clamp(2.4rem, 6.5vw, 4.2rem);
+  font-size: clamp(2.2rem, 5.8vw, 3.8rem);
   font-weight: 600;
   letter-spacing: -0.03em;
   color: var(--text);
@@ -152,9 +150,9 @@ body {
 }
 
 .clock-label {
-  font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+  font-size: clamp(0.68rem, 1.1vw, 0.8rem);
   color: var(--text-muted);
-  margin-top: 8px;
+  margin-top: 6px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 500;
@@ -163,7 +161,7 @@ body {
 .countdown-card {
   background: linear-gradient(145deg, var(--gold) 0%, var(--gold-dark) 100%);
   border-radius: var(--radius);
-  padding: clamp(16px, 2.5vw, 28px);
+  padding: clamp(14px, 2vw, 24px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -184,28 +182,25 @@ body {
 }
 
 .countdown-label {
-  font-size: clamp(0.75rem, 1.4vw, 0.95rem);
+  font-size: clamp(0.72rem, 1.3vw, 0.9rem);
   font-weight: 500;
   opacity: 0.92;
-  letter-spacing: 0.03em;
 }
 
-.countdown-label span {
-  font-weight: 700;
-}
+.countdown-label span { font-weight: 700; }
 
 .countdown {
   font-family: 'Inter', monospace;
-  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-size: clamp(2rem, 5.5vw, 3.4rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin: 6px 0;
+  margin: 4px 0;
   font-variant-numeric: tabular-nums;
   line-height: 1;
 }
 
 .next-prayer-time {
-  font-size: clamp(0.75rem, 1.3vw, 0.9rem);
+  font-size: clamp(0.72rem, 1.2vw, 0.85rem);
   opacity: 0.85;
   font-weight: 500;
 }
@@ -214,7 +209,7 @@ body {
 .prayers {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: clamp(8px, 1.2vw, 14px);
+  gap: clamp(6px, 1vw, 12px);
   flex-shrink: 0;
 }
 
@@ -223,7 +218,7 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-sm);
-  padding: clamp(12px, 1.8vw, 18px) clamp(8px, 1vw, 12px);
+  padding: clamp(10px, 1.5vw, 16px) clamp(6px, 0.8vw, 10px);
   text-align: center;
   box-shadow: var(--shadow);
   transition: var(--transition);
@@ -250,11 +245,10 @@ body {
 }
 
 .prayer-name {
-  font-size: clamp(0.7rem, 1.3vw, 0.85rem);
+  font-size: clamp(0.65rem, 1.2vw, 0.8rem);
   color: var(--text-muted);
   font-weight: 500;
-  margin-bottom: 6px;
-  letter-spacing: 0.02em;
+  margin-bottom: 4px;
 }
 
 .prayer-card.active .prayer-name {
@@ -263,69 +257,136 @@ body {
 }
 
 .prayer-time {
-  font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+  font-size: clamp(0.95rem, 2vw, 1.35rem);
   font-weight: 600;
   color: var(--text);
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.02em;
 }
 
-.prayer-card.active .prayer-time {
-  color: var(--gold-dark);
-}
+.prayer-card.active .prayer-time { color: var(--gold-dark); }
 
-/* Quote Section */
-.quote-section {
+/* Bottom Area: Quote + Slider */
+.bottom-area {
   flex: 1;
   min-height: 0;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(10px, 1.5vw, 18px);
 }
 
 .quote-card {
-  width: 100%;
   background: var(--card-bg);
   backdrop-filter: blur(12px);
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  padding: clamp(16px, 2.2vw, 24px) clamp(20px, 3vw, 32px);
+  padding: clamp(14px, 1.8vw, 22px);
   box-shadow: var(--shadow);
   text-align: center;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .quote-icon {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--gold);
   opacity: 0.5;
-  line-height: 1;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .quote-text {
-  font-size: clamp(0.9rem, 1.7vw, 1.15rem);
+  font-size: clamp(0.85rem, 1.5vw, 1.05rem);
   color: var(--text-soft);
-  line-height: 1.55;
-  font-weight: 400;
-  max-width: 900px;
-  margin: 0 auto;
+  line-height: 1.5;
+  transition: opacity 0.3s ease;
 }
 
 .quote-source {
-  font-size: clamp(0.7rem, 1.2vw, 0.82rem);
+  font-size: clamp(0.68rem, 1.1vw, 0.8rem);
   color: var(--gold-dark);
-  margin-top: 10px;
+  margin-top: 8px;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  transition: opacity 0.3s ease;
 }
 
-/* Footer - Running Text */
+/* Slider */
+.slider-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.slider-track {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide.active { opacity: 1; }
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 14px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.65));
+  color: white;
+  font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+  font-weight: 500;
+  text-align: center;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 5;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--gold);
+  transform: scale(1.25);
+}
+
+/* Footer */
 .footer {
   flex-shrink: 0;
   background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
   border-radius: 12px;
   overflow: hidden;
-  height: clamp(36px, 4.5vw, 46px);
+  height: clamp(34px, 4vw, 42px);
   display: flex;
   align-items: center;
   box-shadow: 0 4px 16px rgba(201, 162, 39, 0.25);
@@ -341,7 +402,7 @@ body {
   display: inline-block;
   padding-left: 100%;
   animation: marquee 28s linear infinite;
-  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  font-size: clamp(0.78rem, 1.3vw, 0.92rem);
   font-weight: 500;
   color: white;
   letter-spacing: 0.03em;
@@ -351,6 +412,85 @@ body {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
+
+/* ===== OVERLAYS (Adhan & Iqamah) ===== */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(44, 36, 22, 0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay-content {
+  text-align: center;
+  color: white;
+  padding: 40px;
+  max-width: 90%;
+}
+
+.overlay-icon {
+  font-size: clamp(3rem, 8vw, 5rem);
+  margin-bottom: 12px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.overlay-title {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+.overlay-prayer {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+
+.overlay-time {
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 16px;
+}
+
+.iqamah-countdown {
+  font-family: 'Inter', monospace;
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-weight: 700;
+  color: var(--gold-light);
+  font-variant-numeric: tabular-nums;
+  margin: 12px 0;
+  letter-spacing: -0.02em;
+}
+
+.overlay-message {
+  font-size: clamp(0.9rem, 1.8vw, 1.15rem);
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.adhan-content .overlay-title { color: var(--gold-light); }
 
 /* Loading */
 .loading {
@@ -362,7 +502,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  z-index: 50;
+  z-index: 200;
   transition: opacity 0.4s ease, visibility 0.4s;
 }
 
@@ -381,9 +521,7 @@ body {
   animation: spin 0.8s linear infinite;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+@keyframes spin { to { transform: rotate(360deg); } }
 
 .loading p {
   font-size: 0.95rem;
@@ -392,66 +530,33 @@ body {
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .prayers {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .clock {
-    font-size: clamp(2.6rem, 10vw, 3.4rem);
-  }
-
-  .countdown {
-    font-size: clamp(2.2rem, 9vw, 3rem);
-  }
+  .hero { grid-template-columns: 1fr; }
+  .prayers { grid-template-columns: repeat(3, 1fr); }
+  .bottom-area { grid-template-columns: 1fr; }
+  .slider-card { min-height: 160px; }
 }
 
 @media (max-width: 520px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 8px;
   }
-
-  .date-block {
-    text-align: left;
-  }
-
-  .prayers {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .mosque-info h1 {
-    font-size: 1.1rem;
-  }
+  .date-block { text-align: left; }
+  .prayers { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Large TV / Kiosk optimization */
 @media (min-width: 1400px) {
-  .app {
-    padding: 32px 48px;
-  }
-
-  .clock {
-    font-size: 4.8rem;
-  }
-
-  .countdown {
-    font-size: 4.2rem;
-  }
-
-  .prayer-time {
-    font-size: 1.6rem;
-  }
+  .app { padding: 28px 40px; }
+  .clock { font-size: 4.4rem; }
+  .countdown { font-size: 3.8rem; }
+  .prayer-time { font-size: 1.5rem; }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .running-text {
     animation: none;
     padding-left: 16px;
   }
+  .overlay-icon { animation: none; }
 }
