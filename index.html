@@ -2,165 +2,250 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#FDF8F0" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <title>Masjid Agung Raudhatul Dunya - Display Masjid</title>
+  <title>Masjid Agung Raudhatul Dunya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
 </head>
 <body>
-  <div class="app" id="app">
-    <!-- Header -->
-    <header class="header">
-      <div class="mosque-brand">
-        <div class="mosque-icon">☪</div>
-        <div class="mosque-info">
-          <h1 id="mosque-name">Masjid Agung Raudhatul Dunya</h1>
-          <p id="mosque-location">Bogor, Jawa Barat</p>
+  <div class="page">
+
+    <!-- ========== HERO BANNER ========== -->
+    <header class="hero-banner" id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-badge">☪ Display Masjid</div>
+        <h1 class="hero-title">
+          <span class="t-white">Masjid</span>
+          <span class="t-gold">Agung</span>
+          <span class="t-cream">Raudhatul Dunya</span>
+        </h1>
+        <p class="hero-sub">Bogor, Jawa Barat • Pusat Ibadah, Ilmu & Silaturahmi</p>
+        <div class="hero-meta">
+          <span id="hero-date">—</span>
+          <span class="dot">•</span>
+          <span id="hero-hijri">—</span>
         </div>
-      </div>
-      <div class="header-right">
-        <div class="date-block">
-          <div class="gregorian" id="gregorian-date">—</div>
-          <div class="hijri" id="hijri-date">—</div>
-        </div>
-        <div class="offline-badge" id="offline-badge" title="Mode Offline">Offline</div>
       </div>
     </header>
 
-    <!-- Scrollable Main -->
-    <main class="main" id="main-scroll">
-      <!-- Hero: Clock + Countdown -->
-      <section class="hero section">
-        <div class="clock-wrap">
-          <div class="clock" id="clock">00:00:00</div>
-          <div class="clock-label">Waktu Sekarang</div>
+    <!-- ========== FLOATING QIBLA CARD ========== -->
+    <div class="qibla-float" id="qibla-float">
+      <div class="qibla-icon">🕋</div>
+      <div class="qibla-info">
+        <div class="qibla-label">Arah Kiblat</div>
+        <div class="qibla-dir" id="qibla-dir">± 295°</div>
+        <div class="qibla-sub">Barat Laut (dari Bogor)</div>
+      </div>
+    </div>
+
+    <!-- ========== MAIN SCROLL CONTENT ========== -->
+    <main class="content">
+
+      <!-- JAM + COUNTDOWN + JADWAL SHOLAT -->
+      <section class="section" id="waktu">
+        <div class="section-head">
+          <h2>Waktu Sholat Hari Ini</h2>
+          <p>Jadwal mengikuti lokasi Anda (metode Kemenag)</p>
         </div>
-        <div class="countdown-card" id="countdown-card">
-          <div class="countdown-label">Menuju <span id="next-prayer-name">—</span></div>
-          <div class="countdown" id="countdown">00:00:00</div>
-          <div class="next-prayer-time" id="next-prayer-time">—</div>
+
+        <div class="time-grid">
+          <div class="time-card clock-card">
+            <div class="big-clock" id="clock">00:00:00</div>
+            <div class="label">Waktu Sekarang</div>
+          </div>
+          <div class="time-card next-card">
+            <div class="next-label">Menuju <span id="next-prayer-name">—</span></div>
+            <div class="big-countdown" id="countdown">00:00:00</div>
+            <div class="next-time" id="next-prayer-time">—</div>
+          </div>
+        </div>
+
+        <div class="prayer-grid">
+          <div class="p-card" data-prayer="Fajr"><span class="p-name">Subuh</span><span class="p-time" id="time-Fajr">--:--</span></div>
+          <div class="p-card" data-prayer="Sunrise"><span class="p-name">Syuruq</span><span class="p-time" id="time-Sunrise">--:--</span></div>
+          <div class="p-card" data-prayer="Dhuhr"><span class="p-name">Dzuhur</span><span class="p-time" id="time-Dhuhr">--:--</span></div>
+          <div class="p-card" data-prayer="Asr"><span class="p-name">Ashar</span><span class="p-time" id="time-Asr">--:--</span></div>
+          <div class="p-card" data-prayer="Maghrib"><span class="p-name">Maghrib</span><span class="p-time" id="time-Maghrib">--:--</span></div>
+          <div class="p-card" data-prayer="Isha"><span class="p-name">Isya</span><span class="p-time" id="time-Isha">--:--</span></div>
         </div>
       </section>
 
-      <!-- Prayer Times -->
-      <section class="prayers section">
-        <div class="prayer-card" data-prayer="Fajr"><div class="prayer-name">Subuh</div><div class="prayer-time" id="time-Fajr">--:--</div></div>
-        <div class="prayer-card" data-prayer="Sunrise"><div class="prayer-name">Syuruq</div><div class="prayer-time" id="time-Sunrise">--:--</div></div>
-        <div class="prayer-card" data-prayer="Dhuhr"><div class="prayer-name">Dzuhur</div><div class="prayer-time" id="time-Dhuhr">--:--</div></div>
-        <div class="prayer-card" data-prayer="Asr"><div class="prayer-name">Ashar</div><div class="prayer-time" id="time-Asr">--:--</div></div>
-        <div class="prayer-card" data-prayer="Maghrib"><div class="prayer-name">Maghrib</div><div class="prayer-time" id="time-Maghrib">--:--</div></div>
-        <div class="prayer-card" data-prayer="Isha"><div class="prayer-name">Isya</div><div class="prayer-time" id="time-Isha">--:--</div></div>
-      </section>
-
-      <!-- Rotating Content Sections -->
-      <section class="content-rotator section" id="content-rotator">
-        <!-- Section 1: Kegiatan + Imam -->
-        <div class="rotator-panel active" data-panel="0">
-          <div class="panel-grid">
-            <div class="info-card">
-              <div class="card-header"><span class="card-icon">📅</span> Kegiatan & Kajian Harian</div>
-              <div class="kegiatan-list" id="kegiatan-list"></div>
-            </div>
-            <div class="info-card">
-              <div class="card-header"><span class="card-icon">🕌</span> Jadwal Imam & Khotib</div>
-              <div class="imam-list" id="imam-list"></div>
-              <div class="khotib-box" id="khotib-box"></div>
-            </div>
-          </div>
+      <!-- AYAT & HIKMAH -->
+      <section class="section" id="hikmah">
+        <div class="section-head">
+          <h2>Ayat & Hikmah Sholat di Masjid</h2>
         </div>
-
-        <!-- Section 2: Pengumuman + QR Donasi -->
-        <div class="rotator-panel" data-panel="1">
-          <div class="panel-grid">
-            <div class="info-card">
-              <div class="card-header"><span class="card-icon">📢</span> Pengumuman Masjid</div>
-              <div class="pengumuman-list" id="pengumuman-list"></div>
-            </div>
-            <div class="info-card qr-card">
-              <div class="card-header"><span class="card-icon">💝</span> Infaq & Sedekah</div>
-              <div class="qr-wrap">
-                <div class="qr-placeholder" id="qr-code">
-                  <div class="qr-inner">QR</div>
-                </div>
-                <p class="qr-text" id="donation-text">Scan untuk Infaq</p>
-                <p class="qr-sub">Semoga menjadi amal jariyah</p>
-              </div>
-            </div>
+        <div class="hikmah-grid">
+          <div class="hikmah-card">
+            <div class="arabic">إِنَّمَا يَعْمُرُ مَسَاجِدَ اللَّهِ مَنْ آمَنَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ</div>
+            <p class="arti">"Hanyalah yang memakmurkan masjid-masjid Allah ialah orang-orang yang beriman kepada Allah dan hari kemudian..."</p>
+            <span class="sumber">QS. At-Taubah: 18</span>
           </div>
-        </div>
-
-        <!-- Section 3: Hari Besar + Quote -->
-        <div class="rotator-panel" data-panel="2">
-          <div class="panel-grid">
-            <div class="info-card">
-              <div class="card-header"><span class="card-icon">🌟</span> Hari Besar Islam</div>
-              <div class="haribesar-list" id="haribesar-list"></div>
-            </div>
-            <div class="info-card quote-card-inner">
-              <div class="card-header"><span class="card-icon">❝</span> Mutiara Hikmah</div>
-              <p class="quote-text" id="quote-text">Memuat...</p>
-              <p class="quote-source" id="quote-source"></p>
-            </div>
+          <div class="hikmah-card">
+            <div class="arabic">وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ وَارْكَعُوا مَعَ الرَّاكِعِينَ</div>
+            <p class="arti">"Dan dirikanlah sholat, tunaikanlah zakat, dan rukuklah bersama orang-orang yang rukuk."</p>
+            <span class="sumber">QS. Al-Baqarah: 43</span>
           </div>
-        </div>
-
-        <!-- Section 4: Dzikir -->
-        <div class="rotator-panel" data-panel="3">
-          <div class="panel-grid dzikir-grid">
-            <div class="info-card">
-              <div class="card-header"><span class="card-icon">🌅</span> Dzikir Pagi</div>
-              <div class="dzikir-list" id="dzikir-pagi"></div>
-            </div>
-            <div class="info-card">
-              <div class="card-header"><span class="card-icon">🌇</span> Dzikir Petang</div>
-              <div class="dzikir-list" id="dzikir-petang"></div>
-            </div>
+          <div class="hikmah-card gold">
+            <p class="arti">"Sholat berjamaah lebih utama daripada sholat sendirian dengan dua puluh tujuh derajat."</p>
+            <span class="sumber">HR. Bukhari & Muslim</span>
+          </div>
+          <div class="hikmah-card gold">
+            <p class="arti">"Sebaik-baik tempat adalah masjid, dan seburuk-buruk tempat adalah pasar."</p>
+            <span class="sumber">HR. Ahmad & Ath-Thabrani</span>
           </div>
         </div>
       </section>
 
-      <!-- Adhan Selector (small) -->
-      <section class="adhan-selector section">
-        <label>Suara Adzan:</label>
-        <select id="adhan-select"></select>
+      <!-- TENTANG MASJID -->
+      <section class="section" id="tentang">
+        <div class="section-head">
+          <h2>Tentang Masjid</h2>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🕌</div>
+          <div class="about-body">
+            <h3>Masjid Agung Raudhatul Dunya</h3>
+            <p>Masjid Agung Raudhatul Dunya merupakan pusat ibadah, ilmu, dan silaturahmi masyarakat Bogor. Dengan semangat memakmurkan rumah Allah, masjid ini aktif menyelenggarakan kajian rutin, pendidikan Al-Qur'an, serta berbagai kegiatan sosial keagamaan.</p>
+            <p>Kami mengajak seluruh jamaah untuk bersama-sama menjaga kebersihan, kekhusyukan, dan kemakmuran masjid.</p>
+          </div>
+        </div>
       </section>
+
+      <!-- KEGIATAN & KAJIAN -->
+      <section class="section" id="kajian">
+        <div class="section-head">
+          <h2>Kegiatan & Kajian</h2>
+          <p>Jadwal kegiatan rutin masjid</p>
+        </div>
+        <div class="kajian-grid" id="kegiatan-list"></div>
+      </section>
+
+      <!-- JADWAL IMAM & KHOTIB -->
+      <section class="section" id="imam">
+        <div class="section-head">
+          <h2>Jadwal Imam & Khotib</h2>
+        </div>
+        <div class="two-col">
+          <div class="info-box">
+            <h4>Imam Sholat</h4>
+            <div id="imam-list"></div>
+          </div>
+          <div class="info-box accent">
+            <h4>Khotib Jumat</h4>
+            <div id="khotib-box"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HARI BESAR ISLAM -->
+      <section class="section" id="haribesar">
+        <div class="section-head">
+          <h2>Hari Besar & Perayaan Islam</h2>
+          <p>Tanggal penting dalam kalender Hijriah</p>
+        </div>
+        <div class="hari-grid" id="haribesar-list"></div>
+      </section>
+
+      <!-- DZIKIR -->
+      <section class="section" id="dzikir">
+        <div class="section-head">
+          <h2>Dzikir Pagi & Petang</h2>
+        </div>
+        <div class="two-col">
+          <div class="info-box">
+            <h4>🌅 Dzikir Pagi</h4>
+            <div class="dzikir-list" id="dzikir-pagi"></div>
+          </div>
+          <div class="info-box">
+            <h4>🌇 Dzikir Petang</h4>
+            <div class="dzikir-list" id="dzikir-petang"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PENGUMUMAN -->
+      <section class="section" id="pengumuman">
+        <div class="section-head">
+          <h2>Pengumuman Masjid</h2>
+        </div>
+        <div class="pengumuman-grid" id="pengumuman-list"></div>
+      </section>
+
+      <!-- KALENDER SINGKAT -->
+      <section class="section" id="kalender">
+        <div class="section-head">
+          <h2>Kalender</h2>
+        </div>
+        <div class="calendar-card">
+          <div class="cal-today">
+            <div class="cal-day" id="cal-day">—</div>
+            <div class="cal-date" id="cal-date">—</div>
+            <div class="cal-hijri" id="cal-hijri">—</div>
+          </div>
+          <div class="cal-info">
+            <p>Gunakan tanggal Hijriah di atas sebagai acuan kegiatan keislaman. Jadwal sholat diperbarui otomatis setiap hari.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ADHAN SELECTOR -->
+      <section class="section compact">
+        <div class="adhan-bar">
+          <label>Suara Adzan</label>
+          <select id="adhan-select"></select>
+          <span class="offline-badge" id="offline-badge">Mode Offline</span>
+        </div>
+      </section>
+
+      <!-- FOOTER SPACER for QR -->
+      <div class="bottom-spacer"></div>
     </main>
 
-    <!-- Footer Running Text -->
-    <footer class="footer">
-      <div class="running-text-wrap">
-        <div class="running-text" id="running-text">Selamat datang di Masjid Agung Raudhatul Dunya</div>
+    <!-- QR CODE - pojok kanan bawah (fixed saat mentok) -->
+    <div class="qr-fixed" id="qr-fixed">
+      <div class="qr-box">
+        <div class="qr-visual">
+          <div class="qr-pattern"></div>
+        </div>
+        <div class="qr-label">
+          <strong>Infaq & Sedekah</strong>
+          <span>Scan QR</span>
+        </div>
       </div>
-    </footer>
+    </div>
 
-    <!-- OVERLAY ADHAN -->
+    <!-- RUNNING TEXT -->
+    <div class="running-bar">
+      <div class="running-text" id="running-text">Selamat datang di Masjid Agung Raudhatul Dunya</div>
+    </div>
+
+    <!-- OVERLAYS -->
     <div class="overlay" id="adhan-overlay">
-      <div class="overlay-content">
-        <div class="overlay-icon">🕌</div>
-        <h2 class="overlay-title">WAKTU ADZAN</h2>
-        <div class="overlay-prayer" id="adhan-prayer-name">—</div>
-        <div class="overlay-time" id="adhan-time">--:--</div>
-        <p class="overlay-message">Mari bersegera menuju masjid</p>
+      <div class="overlay-body">
+        <div class="ov-icon">🕌</div>
+        <div class="ov-title">WAKTU ADZAN</div>
+        <div class="ov-prayer" id="adhan-prayer-name">—</div>
+        <div class="ov-time" id="adhan-time">--:--</div>
+        <p>Mari bersegera menuju masjid</p>
       </div>
     </div>
-
-    <!-- OVERLAY IQAMAH -->
     <div class="overlay" id="iqamah-overlay">
-      <div class="overlay-content">
-        <div class="overlay-icon">⏳</div>
-        <h2 class="overlay-title">IQAMAH</h2>
-        <div class="overlay-prayer" id="iqamah-prayer-name">—</div>
-        <div class="iqamah-countdown" id="iqamah-countdown">00:00</div>
-        <p class="overlay-message">Rapatkan & luruskan shaf • Matikan HP</p>
+      <div class="overlay-body">
+        <div class="ov-icon">⏳</div>
+        <div class="ov-title">IQAMAH</div>
+        <div class="ov-prayer" id="iqamah-prayer-name">—</div>
+        <div class="ov-count" id="iqamah-countdown">00:00</div>
+        <p>Rapatkan & luruskan shaf • Matikan HP</p>
       </div>
     </div>
 
-    <!-- Loading -->
     <div class="loading" id="loading">
       <div class="spinner"></div>
       <p>Memuat Display Masjid...</p>
